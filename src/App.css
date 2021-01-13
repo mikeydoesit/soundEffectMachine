@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#drum-machine {
+  max-width: 100vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(45deg, #6e6f74, #202022);
+  padding: 14px 21px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#controls {
+  padding-right: 28px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
+}
+#drum-machine #powerWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+#drum-machine #powerWrapper svg {
+  font-size: 3.5em;
+  border-radius: 50%;
+  padding: 11px;
+  box-shadow: inset 3px 0 0px -1px #4b4c4f, inset 0 -3px 1px -1px #424346,
+    inset 0 -4px 0 -1px #353639, inset 5px 0 1px -1px rgba(182, 182, 190, 0.6),
+    inset 0 -5px 1px -1px rgba(182, 182, 190, 0.2);
+  transition: all 0.9 ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#drumPadWrapper {
+  width: 70vw;
+  height: 300px;
+}
+
+#drumPadWrapper #drumPadContainer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 7px;
+  row-gap: 7px;
+}
+#drumPadWrapper #drumPadContainer .pad {
+  cursor: pointer;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: rgb(231, 232, 237);
+  background: radial-gradient(
+    circle,
+    rgba(231, 232, 237, 1) 0%,
+    rgba(213, 216, 223, 1) 100%
+  );
+  border-radius: 21px;
+  border: 2px solid #0f0f0f;
+  box-shadow: inset 3px 0 0px -1px #4b4c4f, inset 0 -3px 1px -1px #424346,
+    inset 0 -4px 0 -1px #353639, inset 5px 0 1px -1px rgba(182, 182, 190, 0.6),
+    inset 0 -5px 1px -1px rgba(182, 182, 190, 0.2);
+  transition: all 0.3 ease-in-out;
 }
